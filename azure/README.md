@@ -49,3 +49,11 @@ Stream the screen, see https://trac.ffmpeg.org/wiki/StreamingGuide:
     `kubectl port-forward $(kubectl get pod -l app=minerl -o jsonpath="{.items[0].metadata.name}") 8888:8888`
 
 3. Now you can watch the screen record using VLC plyaer via `rtmp://127.0.0.1:8888/stream`
+
+## 4. Or view the game on vnc
+
+1. Start the v11vnc on the display :44
+
+    `x11vnc -display :44 -listen 0.0.0.0 -rfbport 5901 -forever -shared -viewonly -passwd choice_password`
+
+2. Connect to vnc on `ip:1`, use the passwd.
